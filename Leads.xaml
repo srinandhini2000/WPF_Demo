@@ -1,0 +1,58 @@
+﻿<Window x:Class="WPF_Demo.Leads"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Leads" Height="450" Width="1195" Loaded="Window_Loaded">
+
+    <DataGrid Name="grdEmployee" AutoGenerateColumns="True" 
+          HorizontalAlignment="Left" VerticalAlignment="Top">
+        
+        <DataGrid.Columns>
+
+
+            <DataGridTextColumn Header="Id" Width="100" Binding="{Binding Lid}" />
+
+            <DataGridTextColumn Header="Name" Width="100" Binding="{Binding Lname}" IsReadOnly="True" x:Name="dgrLname"/>
+
+            <DataGridTextColumn Header="ProjectName" Width="100" Binding="{Binding LProject_Name}" IsReadOnly="True" x:Name="dgrLProject_Name"/>
+
+            <DataGridTextColumn Header="Status" Width="100" Binding="{Binding LStatus}" IsReadOnly="True" x:Name="dgrLStatus"/>
+
+            <DataGridTextColumn Header="Added" Width="100" Binding="{Binding LAdded}" IsReadOnly="True" x:Name="dgrLAdded"/>
+
+            <DataGridTextColumn Header="Type" Width="100" Binding="{Binding LType}" IsReadOnly="True" x:Name="dgrLType"/>
+
+            <DataGridTextColumn Header="Contact" Width="100" Binding="{Binding LContact}" IsReadOnly="True" x:Name="dgrLContact"/>
+
+            <DataGridTextColumn Header="Action" Width="100" Binding="{Binding LAction}" IsReadOnly="True" x:Name="dgrLAction"/>
+
+            <DataGridTextColumn Header="Assignee" Width="100" Binding="{Binding LAssignee}" IsReadOnly="True" x:Name="dgrLAssignee"/>
+
+            <DataGridTextColumn Header="Bid_date" Width="100" Binding="{Binding LBid_Date}" IsReadOnly="True" x:Name="dgrLBid_Date"/>
+
+            <DataGridTemplateColumn Header="Edit" Width="100">
+                <DataGridTemplateColumn.CellTemplate >
+                    <DataTemplate>
+                        <Button Content="Edit" Click="Button_Click" CommandParameter="{Binding Lid}"></Button>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Header="Delete" Width="100">
+                <DataGridTemplateColumn.CellTemplate >
+                    <DataTemplate>
+                        <Button Content="Delete" Click="Button_Click_1"   CommandParameter="{Binding Lid}" 
+         ></Button>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+
+        </DataGrid.Columns>
+
+
+    </DataGrid>
+    
+
+
+</Window>
